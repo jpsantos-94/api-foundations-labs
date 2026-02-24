@@ -1,0 +1,320 @@
+{
+  "info": {
+    "_postman_id": "8654e95d-7279-4155-8059-7f849d19b170",
+    "name": "Simple Book API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47628614"
+  },
+  "item": [
+    {
+      "name": "Simple book status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/status",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List of books - fiction",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/books?type=fiction",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "books"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "fiction",
+              "description": "provides books of 'fiction' type",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Specified book",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/books/:bookId",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "books",
+            ":bookId"
+          ],
+          "variable": [
+            {
+              "key": "bookId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order book",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"bookId\": 4,\r\n  \"customerName\": \"{{$randomFullName}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/orders",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register client",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"clientName\": \"João Santos\",\r\n   \"clientEmail\": \"jcsantos1@example.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/api-clients/",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "api-clients",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "orders",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/orders",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "specific order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/orders/:orderid",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "orders",
+            ":orderid"
+          ],
+          "variable": [
+            {
+              "key": "orderid",
+              "value": "Q6JXJrf3l3KiPYvRhp64a"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Change order name",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customerName\": \"{{$randomFullName}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/orders/:id",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "orders",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "Rvb6xUUzmoB-e2mK9IuaF"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/orders/:id",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "orders",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "RBq5qvUf170PodrlrFS9_"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base url",
+      "value": "https://simple-books-api.click"
+    },
+    {
+      "key": "accessToken",
+      "value": "____"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "info": {
+    "_postman_id": "b744d204-a111-4f78-bd92-e1c52cfcfb43",
+    "name": "JSON Placeholder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47628614"
+  },
+  "item": [
+    {
+      "name": "All Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/users",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Specific user",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/users/1",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"foo\",\r\n    \"body\": \"bar\",\r\n    \"userId\": 7\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/posts/",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "posts",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update a post",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\":1,\r\n    \"title\": \"bar\",\r\n    \"body\": \"foo\",\r\n    \"userId\": 7\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/posts/1",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patch a post",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\":1000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/posts/1",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a post",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base url}}/posts/1",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all posts from user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/posts?userId=1",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "posts"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1",
+              "description": "Get all posts from user 1",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all todos from user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/user/3/todos",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "user",
+            "3",
+            "todos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all todos from user 2",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base url}}/todos?userId=4",
+          "host": [
+            "{{base url}}"
+          ],
+          "path": [
+            "todos"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "4",
+              "description": "Get all todos from user 4",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
